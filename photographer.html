@@ -60,18 +60,32 @@
             <button aria-label="Close dialog">X</button>
         </dialog>
 
-        <div id="contact_modal">
+<!--        data pour le aria-->
+        <div id="contact_modal" aria-labelledby="modal_contact_me">
             <div class="modal">
                 <header>
-                    <h2>Contactez-moi</h2>
-                    <img src="assets/icons/close.svg" onclick="closeModal()" />
+                    <h1 id="modal_contact_me">
+                        Contactez-moi
+                        <br>
+                        <span>Name</span>
+                    </h1>
+                    <img src="assets/icons/close.svg" onclick="closeModal()" aria-label="Close Contact form" />
                 </header>
                 <form>
                     <div>
-                        <label>Prénom</label>
-                        <input />
+                        <label for="firstname">Prénom</label>
+                        <input id="firstname" type="text" />
+
+                        <label for="lastname">Nom</label>
+                        <input id="lastname" type="text" />
+
+                        <label for="email">Email</label>
+                        <input id="email" type="email" />
+
+                        <label for="your_message">Votre message</label>
+                        <textarea name="your_message" id="your_message" cols="30" rows="10"></textarea>
                     </div>
-                    <button class="contact_button">Envoyer</button>
+                    <button class="contact_button" aria-label="send">Envoyer</button>
                 </form>
             </div>
         </div>
