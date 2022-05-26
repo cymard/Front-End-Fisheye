@@ -9,13 +9,48 @@
     </head>
     <body>
         <header>
-            <img src="assets/images/logo.png" class="logo" />
+            <a href="../Front-End-Fisheye/">
+                <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+            </a>
         </header>
         <main id="main">
             <div class="photograph-header">
+                <div>
+                    <h1>Nom</h1>
+                    <p>Ville</p>
+                    <p>slogan</p>
+                </div>
                 <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+<!--                data-->
+                <img src="" alt="">
             </div>
+            <section class="photograph-pictures">
+                <form action="">
+                    <label for="sortPictureBy">Trier par</label>
+                    <select name="sortType" id="sortPictureBy">
+                        <option value="popularity">Popularité</option>
+                        <option value="date">Date</option>
+                        <option value="Title">Titre</option>
+                    </select>
+                </form>
+<!--                <figure>-->
+<!--                    <a href=""> // data-->
+<!--                        <img src="" alt=""> // data-->
+<!--                    </a>-->
+<!--                    <figcaption>-->
+<!--                        <p></p>-->
+<!--                <i class="fa-solid fa-heart" aria-label="likes"></i>-->
+<!--                    </figcaption>-->
+<!--                </figure>-->
+            </section>
         </main>
+        <p>
+            <span>
+                <i class="fa-solid fa-heart" aria-label="likes"></i>
+            </span>
+            <span></span>
+        </p>
+
         <div id="contact_modal">
             <div class="modal">
                 <header>
@@ -33,5 +68,6 @@
         </div>
 
         <script src="/scripts/utils/contactForm.js"></script>
+        <script src="https://kit.fontawesome.com/9dd3a3cdbc.js" crossorigin="anonymous"></script>
     </body>
 </html>
