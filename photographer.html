@@ -9,7 +9,7 @@
         <title>Fisheye - photographe </title>
     </head>
     <body>
-        <header>
+        <header class="header">
             <a href="../Front-End-Fisheye/">
                 <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
             </a>
@@ -26,13 +26,35 @@
                 <img src="./assets/photographers/account.png" alt="">
             </div>
             <section class="photograph-pictures">
-                <form action="">
-                        <label for="order_by">Trier par</label>
-                        <select name="order_by" id="order_by">
-                            <option value="popularity">Popularité</option>
-                            <option value="date">Date</option>
-                            <option value="Title">Titre</option>
-                        </select>
+                <form id="order_by_form" action="">
+                    <p>Trier par</p>
+<!--                    <div>-->
+<!--                        <input type="radio" id="order_by_popularity" name="order_by" value="popularity">-->
+<!--                        <label for="order_by_popularity">-->
+<!--                            Popularité-->
+<!--                            <button>^</button>-->
+<!--                        </label>-->
+<!--                        <input type="radio" id="order_by_date" name="order_by" value="date">-->
+<!--                        <label for="order_by_date">Date</label>-->
+<!--                        <input type="radio" id="order_by_title" name="order_by" value="title">-->
+<!--                        <label for="order_by_title">Titre</label>-->
+<!--                    </div>-->
+
+                    <div class="select" tabindex="1">
+                        <input class="selectopt" name="order_by" type="radio" id="opt1" checked>
+                        <label for="opt1" class="option">Popularité</label>
+                        <input class="selectopt" name="order_by" type="radio" id="opt2">
+                        <label for="opt2" class="option">Date</label>
+                        <input class="selectopt" name="order_by" type="radio" id="opt3">
+                        <label for="opt3" class="option">Titre</label>
+                    </div>
+
+<!--                        <label for="order_by">Trier par</label>-->
+<!--                        <select name="order_by" id="order_by">-->
+<!--                            <option value="popularity">Popularité</option>-->
+<!--                            <option value="date">Date</option>-->
+<!--                            <option value="Title">Titre</option>-->
+<!--                        </select>-->
                 </form>
 
                 <div id="pictures">
@@ -121,9 +143,15 @@
         <dialog>
             <img src="./assets/photographers/account.png" alt="" aria-label="image closeup view">
             <p>Paragraphe paragraphe paragraphe</p>
-            <a class="arrow_previous" href="" aria-label="Previous image"><</a>
-            <a class="arrow_next" href="" aria-label="Next image">></a>
-            <button aria-label="Close dialog">X</button>
+            <a class="arrow_previous" href="#" aria-label="Previous image">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            <a class="arrow_next" href="#" aria-label="Next image">
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            <button aria-label="Close dialog">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </dialog>
 
 <!--        data pour le aria-->
@@ -137,7 +165,7 @@
                     </h1>
                     <img src="assets/icons/close.svg" onclick="closeModal()" aria-label="Close Contact form" />
                 </header>
-                <form>
+                <form class="contact_modal_form">
                     <div>
                         <label for="firstname">Prénom</label>
                         <input id="firstname" type="text" />
