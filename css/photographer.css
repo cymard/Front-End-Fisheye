@@ -76,60 +76,10 @@ body {
     padding: 15px 15px 0 0;
 }
 
-/*#order_by_form {*/
-/*    display: flex;*/
-/*}*/
-
-/*#order_by_form div {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    background-color: #901C1C;*/
-/*    width: 172px;*/
-/*    padding: 5px 10px;*/
-/*    border-radius: 5px;*/
-/*}*/
-
-/*#order_by_form input {*/
-/*    display: none;*/
-/*}*/
-
-/*#order_by_form label {*/
-/*    cursor: pointer;*/
-/*    color: white;*/
-/*    padding: 11px;*/
-/*    font-size: 20px;*/
-/*    letter-spacing: 1px;*/
-/*    font-weight: normal;*/
-/*}*/
-
-/*#order_by_form label:nth-child(4) {*/
-/*    border-top: 1px solid white;*/
-/*    border-bottom: 1px solid white;*/
-/*}*/
-
-/*#order_by {*/
-/*    font-size: 20px;*/
-/*    color: white;*/
-/*    padding: 11px;*/
-/*    width: 170px;*/
-/*    height: 70px;*/
-/*    border: none;*/
-/*    background-color: #901C1C;*/
-/*    border-radius: 5px;*/
-/*    cursor: pointer;*/
-/*    letter-spacing: 1px;*/
-/*    margin-top: 10px;*/
-/*}*/
-
 #order_by_form p:first-child {
     padding-right: 25px;
 }
 
-
-
-
-
-/* debut test */
 .select {
     display: flex;
     flex-direction: column;
@@ -174,14 +124,14 @@ body {
     left: 10px;
 }
 
-.select:focus > .option:nth-of-type(1) {
-    border-radius: 5px 5px 0 0;
-}
+/*.select:focus > .option:nth-of-type(1) {*/
+/*    border-radius: 5px 5px 0 0;*/
+/*}*/
 
-.select:focus > .option:nth-of-type(3) {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
+/*.select:focus > .option:nth-of-type(3) {*/
+/*    border-bottom-left-radius: 5px;*/
+/*    border-bottom-right-radius: 5px;*/
+/*}*/
 
 .select:focus > input:checked + label:after {
     font-family: "Font Awesome 5 Free";
@@ -189,28 +139,28 @@ body {
     content: '\f078';
 }
 
-/* Si l'option 2 est selectionnée .select:focus > #opt2:checked */
+/*!* Si l'option 2 est selectionnée .select:focus > #opt2:checked *!*/
 
-.select:focus > #opt2:checked + label  {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
+/*.select:focus > #opt2:checked + label  {*/
+/*    border-bottom-left-radius: 0;*/
+/*    border-bottom-right-radius: 0;*/
+/*}*/
 
-.select:focus > #opt2:checked ~ #opt1 + label{
-    background-color: red;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
+/*.select:focus > #opt2:checked ~ #opt1 + label{*/
+/*    background-color: red;*/
+/*    border-top-left-radius: 0;*/
+/*    border-top-right-radius: 0;*/
+/*}*/
 
-.select:focus > #opt2:checked ~ #opt3 + label{
-    background-color: red;
-}
+/*.select:focus > #opt2:checked ~ #opt3 + label{*/
+/*    background-color: red;*/
+/*}*/
 
-/* Si l'option 3 est selectionnée .select:focus > #opt3:checked */
-.select:focus > #opt3:checked + label {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
+/*!* Si l'option 3 est selectionnée .select:focus > #opt3:checked *!*/
+/*.select:focus > #opt3:checked + label {*/
+/*    border-bottom-left-radius: 0;*/
+/*    border-bottom-right-radius: 0;*/
+/*}*/
 
 .selectopt {
     opacity: 0;
@@ -225,7 +175,7 @@ input:checked + label {
     border-top: none;
     position: relative;
     letter-spacing: 1px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     color: white;
     cursor: pointer;
     height: 50px;
@@ -407,10 +357,10 @@ dialog {
     position: fixed;
     top: 0;
     height: 100vh;
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     justify-content: center;
-    /*display: none;*/
+    display: none;
     padding: 40px 120px;
     z-index: 2;
 }
