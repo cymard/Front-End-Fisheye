@@ -1,171 +1,171 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="css/normalizer.css" type="text/css">
-        <meta charset="utf-8">
-        <link rel="icon" type="image/png" href="assets/favicon.png">
-        <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-        <title>Fisheye - photographe </title>
-    </head>
-    <body>
-        <header class="header">
-            <a href="../Front-End-Fisheye/">
-                <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
-            </a>
-        </header>
-        <main id="main">
-            <div class="photograph-header">
-                <div>
-                    <h1>Nom Prénom</h1>
-                    <p>Ville</p>
-                    <p>slogan</p>
-                </div>
-                <button class="contact_button" onclick="displayModal()" aria-label="Contact Me">Contactez-moi</button>
-<!--                data-->
-                <img src="./assets/photographers/account.png" alt="">
+<head>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/normalizer.css" type="text/css">
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <title>Fisheye - photographe </title>
+</head>
+<body>
+<header class="header">
+    <a href="../Front-End-Fisheye/">
+        <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/>
+    </a>
+</header>
+<main id="main">
+    <div class="photograph-header">
+        <div>
+            <h1>Nom Prénom</h1>
+            <p>Ville</p>
+            <p>slogan</p>
+        </div>
+        <button class="contact_button" onclick="displayModal()" aria-label="Contact Me">Contactez-moi</button>
+        <!--                data-->
+        <img src="./assets/photographers/account.png" alt="">
+    </div>
+    <section class="photograph-pictures">
+        <form id="order_by_form" action="">
+            <p>Trier par</p>
+            <div class="select" tabindex="1">
+                <input class="selectopt" name="order_by" type="radio" id="opt1" checked>
+                <label for="opt1" class="option">Popularité</label>
+                <input class="selectopt" name="order_by" type="radio" id="opt2">
+                <label for="opt2" class="option">Date</label>
+                <input class="selectopt" name="order_by" type="radio" id="opt3">
+                <label for="opt3" class="option">Titre</label>
             </div>
-            <section class="photograph-pictures">
-                <form id="order_by_form" action="">
-                    <p>Trier par</p>
-                    <div class="select" tabindex="1">
-                        <input class="selectopt" name="order_by" type="radio" id="opt1" checked>
-                        <label for="opt1" class="option">Popularité</label>
-                        <input class="selectopt" name="order_by" type="radio" id="opt2">
-                        <label for="opt2" class="option">Date</label>
-                        <input class="selectopt" name="order_by" type="radio" id="opt3">
-                        <label for="opt3" class="option">Titre</label>
-                    </div>
-                </form>
+        </form>
 
-                <div id="pictures">
-<!--                    TODO remplacer par la data-->
-                    <figure>
-                        <a href="" class="link_image">
-                            <img src="./assets/photographers/account.png" alt="">
-                        </a>
-                        <figcaption>
-                            <p>je suis un paragraphe</p>
-                            <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
+        <div id="pictures">
+            <!--                    TODO remplacer par la data-->
+            <figure>
+                <a href="" class="link_image">
+                    <img src="./assets/photographers/account.png" alt="">
+                </a>
+                <figcaption>
+                    <p>je suis un paragraphe</p>
+                    <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
 
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <a href="" class="link_image">
-                            <img src="./assets/photographers/account.png" alt="">
-                        </a>
-                        <figcaption>
-                            <p>je suis un paragraphe</p>
-                            <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
+                </figcaption>
+            </figure>
+            <figure>
+                <a href="" class="link_image">
+                    <img src="./assets/photographers/account.png" alt="">
+                </a>
+                <figcaption>
+                    <p>je suis un paragraphe</p>
+                    <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
 
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <a href="" class="link_image">
-                            <img src="./assets/photographers/account.png" alt="">
-                        </a>
-                        <figcaption>
-                            <p>je suis un paragraphe</p>
-                            <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
+                </figcaption>
+            </figure>
+            <figure>
+                <a href="" class="link_image">
+                    <img src="./assets/photographers/account.png" alt="">
+                </a>
+                <figcaption>
+                    <p>je suis un paragraphe</p>
+                    <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
 
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <a href="" class="link_image">
-                            <img src="./assets/photographers/account.png" alt="">
-                        </a>
-                        <figcaption>
-                            <p>je suis un paragraphe</p>
-                            <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
+                </figcaption>
+            </figure>
+            <figure>
+                <a href="" class="link_image">
+                    <img src="./assets/photographers/account.png" alt="">
+                </a>
+                <figcaption>
+                    <p>je suis un paragraphe</p>
+                    <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
 
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <a href="" class="link_image">
-                            <img src="./assets/photographers/account.png" alt="">
-                        </a>
-                        <figcaption>
-                            <p>je suis un paragraphe</p>
-                            <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
+                </figcaption>
+            </figure>
+            <figure>
+                <a href="" class="link_image">
+                    <img src="./assets/photographers/account.png" alt="">
+                </a>
+                <figcaption>
+                    <p>je suis un paragraphe</p>
+                    <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
 
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <a href="" class="link_image">
-                            <img src="./assets/photographers/account.png" alt="">
-                        </a>
-                        <figcaption>
-                            <p>je suis un paragraphe</p>
-                            <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
+                </figcaption>
+            </figure>
+            <figure>
+                <a href="" class="link_image">
+                    <img src="./assets/photographers/account.png" alt="">
+                </a>
+                <figcaption>
+                    <p>je suis un paragraphe</p>
+                    <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
 
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <a href="" class="link_image">
-                            <img src="./assets/photographers/account.png" alt="">
-                        </a>
-                        <figcaption>
-                            <p>je suis un paragraphe</p>
-                            <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
+                </figcaption>
+            </figure>
+            <figure>
+                <a href="" class="link_image">
+                    <img src="./assets/photographers/account.png" alt="">
+                </a>
+                <figcaption>
+                    <p>je suis un paragraphe</p>
+                    <span>12 <i class="fa-solid fa-heart" aria-label="likes"></i></span>
 
-                        </figcaption>
-                    </figure>
-                </div>
-            </section>
-        </main>
-        <p id="text_info_likes">
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+</main>
+<p id="text_info_likes">
             <span>
                 295 025
                 <i class="fa-solid fa-heart" aria-label="likes"></i>
             </span>
-            <span>300€ / jour</span>
-        </p>
+    <span>300€ / jour</span>
+</p>
 
-        <dialog>
-            <img src="./assets/photographers/account.png" alt="" aria-label="image closeup view">
-            <p>Paragraphe paragraphe paragraphe</p>
-            <a class="arrow_previous" href="#" aria-label="Previous image">
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-            <a class="arrow_next" href="#" aria-label="Next image">
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
-            <button aria-label="Close dialog">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </dialog>
+<dialog>
+    <img src="./assets/photographers/account.png" alt="" aria-label="image closeup view">
+    <p>Paragraphe paragraphe paragraphe</p>
+    <a class="arrow_previous" href="#" aria-label="Previous image">
+        <i class="fa-solid fa-chevron-left"></i>
+    </a>
+    <a class="arrow_next" href="#" aria-label="Next image">
+        <i class="fa-solid fa-chevron-right"></i>
+    </a>
+    <button aria-label="Close dialog">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+</dialog>
 
 <!--        data pour le aria-->
-        <div id="contact_modal" aria-labelledby="modal_contact_me">
-            <div class="modal">
-                <header>
-                    <h1 id="modal_contact_me">
-                        Contactez-moi
-                        <br>
-                        <span>Name</span>
-                    </h1>
-                    <img src="assets/icons/close.svg" onclick="closeModal()" aria-label="Close Contact form" />
-                </header>
-                <form class="contact_modal_form">
-                    <div>
-                        <label for="firstname">Prénom</label>
-                        <input id="firstname" type="text" />
+<div id="contact_modal" aria-labelledby="modal_contact_me">
+    <div class="modal">
+        <header>
+            <h1 id="modal_contact_me">
+                Contactez-moi
+                <br>
+                <span>Name</span>
+            </h1>
+            <img src="assets/icons/close.svg" onclick="closeModal()" aria-label="Close Contact form"/>
+        </header>
+        <form class="contact_modal_form">
+            <div>
+                <label for="firstname">Prénom</label>
+                <input id="firstname" type="text"/>
 
-                        <label for="lastname">Nom</label>
-                        <input id="lastname" type="text" />
+                <label for="lastname">Nom</label>
+                <input id="lastname" type="text"/>
 
-                        <label for="email">Email</label>
-                        <input id="email" type="email" />
+                <label for="email">Email</label>
+                <input id="email" type="email"/>
 
-                        <label for="your_message">Votre message</label>
-                        <textarea name="your_message" id="your_message"></textarea>
-                    </div>
-                    <button class="contact_button" aria-label="send">Envoyer</button>
-                </form>
+                <label for="your_message">Votre message</label>
+                <textarea name="your_message" id="your_message"></textarea>
             </div>
-        </div>
+            <button class="contact_button" aria-label="send">Envoyer</button>
+        </form>
+    </div>
+</div>
 
-        <script src="/scripts/utils/contactForm.js"></script>
-        <script src="https://kit.fontawesome.com/9dd3a3cdbc.js" crossorigin="anonymous"></script>
-    </body>
+<script src="/scripts/utils/contactForm.js"></script>
+<script src="https://kit.fontawesome.com/9dd3a3cdbc.js" crossorigin="anonymous"></script>
+</body>
 </html>

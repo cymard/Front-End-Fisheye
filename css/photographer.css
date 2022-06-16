@@ -196,15 +196,15 @@ body {
     border-bottom-right-radius: 0;
 }
 
-/*.select:focus > #opt2:checked ~ #opt1 + label{*/
-/*    background-color: red;*/
-/*    border-top-left-radius: 0;*/
-/*    border-top-right-radius: 0;*/
-/*}*/
+.select:focus > #opt2:checked ~ #opt1 + label{
+    background-color: red;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
 
-/*.select:focus > #opt2:checked ~ #opt3 + label{*/
-/*    background-color: red;*/
-/*}*/
+.select:focus > #opt2:checked ~ #opt3 + label{
+    background-color: red;
+}
 
 /* Si l'option 3 est selectionnée .select:focus > #opt3:checked */
 .select:focus > #opt3:checked + label {
@@ -407,17 +407,23 @@ dialog {
     position: fixed;
     top: 0;
     height: 100vh;
-    /*display: flex;*/
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    display: none;
+    /*display: none;*/
     padding: 40px 120px;
+    z-index: 2;
 }
 
 dialog img {
     background-color: #D3573C;
     max-height: 100%;
     object-fit: cover;
+}
+
+dialog p {
+    color: #901C1C;
+    font-size: 23px;
 }
 
 dialog button {
@@ -435,23 +441,16 @@ dialog button {
     position: absolute;
     left: 80px;
     top: 50%;
-    bottom: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
     font-size: 50px;
     color: #901C1C;
 }
 
 .arrow_next {
     position: absolute;
-    top: 50%;
     bottom: 50%;
-    transform: translate(-50%, -50%);
-    right: 60px;
+    transform: translateY(50%);
+    right: 80px;
     font-size: 50px;
     color: #901C1C;
-}
-
-dialog p {
-    color: #901C1C;
-    font-size: 23px;
 }
