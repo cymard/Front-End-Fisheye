@@ -1,58 +1,69 @@
-//Mettre le code JavaScript lié à la page photographer.html
 let selectInputPopularity = document.getElementById('opt1');
 let selectInputDate = document.getElementById('opt2');
-let selectInputTitle = document.getElementById('opt3');
-
 let selectLabelPopularity = document.querySelector('[for="opt1"]');
 let selectLabelDate = document.querySelector('[for="opt2"]');
 let selectLabelTitle = document.querySelector('[for="opt3"]');
-
 let selectDiv = document.getElementsByClassName('select')[0];
 
-let activatedBorderRadiusValue = '5px';
+setBorderRadiusForSelectedElement(selectLabelPopularity);
+
+function setBorderRadiusForSelectedElement(element) {
+    element.style.borderRadius = '5px 5px 5px 5px';
+}
 
 function setBorderRadiusForFirstSelect(element) {
-    element.style.borderTopRightRadius = activatedBorderRadiusValue;
-    element.style.borderTopLeftRadius = activatedBorderRadiusValue;
-    element.style.borderBottomLeftRadius = '0px';
-    element.style.borderBottomRightRadius = '0px';
+    element.style.borderRadius = '5px 5px 0px 0px';
 }
 
 function setBorderRadiusForMiddleSelect(element) {
-    element.style.borderTopRightRadius = '0px';
-    element.style.borderTopLeftRadius = '0px';
-    element.style.borderBottomLeftRadius = '0px';
-    element.style.borderBottomRightRadius = '0px';
+    element.style.borderRadius = '0px 0px 0px 0px';
 }
 
 function setBorderRadiusForLastSelect(element) {
-    element.style.borderTopRightRadius = '0px';
-    element.style.borderTopLeftRadius = '0px';
-    element.style.borderBottomLeftRadius = activatedBorderRadiusValue;
-    element.style.borderBottomRightRadius = activatedBorderRadiusValue;
-
+    element.style.borderRadius = '0px 0px 5px 5px';
 }
 
-selectDiv.addEventListener('click', function() {
+function displayWhiteStrip(element) {
+    element.style.setProperty('--test', 'block');
+}
+
+function hideWhiteStrip(element) {
+    element.style.setProperty('--test', 'none');
+}
+
+selectDiv.addEventListener('focusout', function() {
+    setBorderRadiusForSelectedElement(selectLabelPopularity);
+    setBorderRadiusForSelectedElement(selectLabelDate);
+    setBorderRadiusForSelectedElement(selectLabelTitle);
+})
+
+selectDiv.addEventListener('focus', function() {
     if(selectInputPopularity.checked) {
-        console.log('pop')
-        // console.log('popularity est selectionné');
         setBorderRadiusForFirstSelect(selectLabelPopularity);
         setBorderRadiusForMiddleSelect(selectLabelDate);
         setBorderRadiusForLastSelect(selectLabelTitle);
 
+        displayWhiteStrip(selectLabelPopularity);
+        displayWhiteStrip(selectLabelDate);
+        hideWhiteStrip(selectLabelTitle);
+
     }else if(selectInputDate.checked) {
-        console.log('date')
-        // console.log('date est selectionné');
         setBorderRadiusForFirstSelect(selectLabelDate);
         setBorderRadiusForMiddleSelect(selectLabelPopularity);
         setBorderRadiusForLastSelect(selectLabelTitle);
 
+        displayWhiteStrip(selectLabelDate);
+        displayWhiteStrip(selectLabelPopularity);
+        hideWhiteStrip(selectLabelTitle);
+
     }else {
-        console.log('titre');
         setBorderRadiusForFirstSelect(selectLabelTitle);
         setBorderRadiusForMiddleSelect(selectLabelPopularity);
         setBorderRadiusForLastSelect(selectLabelDate);
+
+        displayWhiteStrip(selectLabelTitle);
+        displayWhiteStrip(selectLabelPopularity);
+        hideWhiteStrip(selectLabelDate);
     }
 })
 

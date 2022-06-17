@@ -27,10 +27,6 @@ body {
     padding: 0;
 }
 
-/*.photograph-header div p {*/
-/*    margin: 0;*/
-/*}*/
-
 .photograph-header div p:nth-child(2) {
     color: #901C1C;
     font-size: 23px;
@@ -113,9 +109,16 @@ body {
     color: #FFF;
 }
 
+:root {
+    --test: '';
+}
+
 .select:focus .option:nth-of-type(1):before,
-.select:focus .option:nth-of-type(2):before  {
+.select:focus .option:nth-of-type(2):before,
+.select:focus .option:nth-of-type(3):before
+{
     content: '';
+    display: var(--test);
     height: 1px;
     width: 180px;
     background-color: #FFFFFF;
@@ -124,43 +127,11 @@ body {
     left: 10px;
 }
 
-/*.select:focus > .option:nth-of-type(1) {*/
-/*    border-radius: 5px 5px 0 0;*/
-/*}*/
-
-/*.select:focus > .option:nth-of-type(3) {*/
-/*    border-bottom-left-radius: 5px;*/
-/*    border-bottom-right-radius: 5px;*/
-/*}*/
-
 .select:focus > input:checked + label:after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: '\f078';
 }
-
-/*!* Si l'option 2 est selectionnée .select:focus > #opt2:checked *!*/
-
-/*.select:focus > #opt2:checked + label  {*/
-/*    border-bottom-left-radius: 0;*/
-/*    border-bottom-right-radius: 0;*/
-/*}*/
-
-/*.select:focus > #opt2:checked ~ #opt1 + label{*/
-/*    background-color: red;*/
-/*    border-top-left-radius: 0;*/
-/*    border-top-right-radius: 0;*/
-/*}*/
-
-/*.select:focus > #opt2:checked ~ #opt3 + label{*/
-/*    background-color: red;*/
-/*}*/
-
-/*!* Si l'option 3 est selectionnée .select:focus > #opt3:checked *!*/
-/*.select:focus > #opt3:checked + label {*/
-/*    border-bottom-left-radius: 0;*/
-/*    border-bottom-right-radius: 0;*/
-/*}*/
 
 .selectopt {
     opacity: 0;
@@ -193,11 +164,6 @@ input:checked + label:after {
 .photograph-pictures form label {
     padding: 5px 5px 5px 25px;
 }
-/* fin test */
-
-
-
-
 
 #pictures {
     display: grid;
