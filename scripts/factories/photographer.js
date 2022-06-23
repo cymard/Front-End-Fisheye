@@ -14,13 +14,13 @@ function photographerFactory(data) {
         h2.textContent = name;
 
         const paragraphCity = document.createElement('p');
-        paragraphCity.textContent = 'Ville';
+        paragraphCity.textContent = data.city+', '+data.country;
 
         const paragraphTagline = document.createElement('p');
-        paragraphTagline.textContent = 'tagline';
+        paragraphTagline.textContent = data.tagline;
 
         const paragraphPrice = document.createElement('p');
-        paragraphPrice.textContent = 'price€/jour'
+        paragraphPrice.textContent = data.price+'€/jour'
 
         article.appendChild(link);
         link.appendChild(img);
@@ -31,5 +31,6 @@ function photographerFactory(data) {
         article.appendChild(paragraphPrice);
         return (article);
     }
+
     return { name, picture, getUserCardDOM }
 }

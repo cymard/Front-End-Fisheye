@@ -31,14 +31,14 @@ function hideWhiteStrip(element) {
     element.style.setProperty('--test', 'none');
 }
 
-selectDiv.addEventListener('focusout', function() {
+selectDiv.addEventListener('focusout', function () {
     setBorderRadiusForSelectedElement(selectLabelPopularity);
     setBorderRadiusForSelectedElement(selectLabelDate);
     setBorderRadiusForSelectedElement(selectLabelTitle);
 })
 
-selectDiv.addEventListener('focus', function() {
-    if(selectInputPopularity.checked) {
+selectDiv.addEventListener('focus', function () {
+    if (selectInputPopularity.checked) {
         setBorderRadiusForFirstSelect(selectLabelPopularity);
         setBorderRadiusForMiddleSelect(selectLabelDate);
         setBorderRadiusForLastSelect(selectLabelTitle);
@@ -47,7 +47,7 @@ selectDiv.addEventListener('focus', function() {
         displayWhiteStrip(selectLabelDate);
         hideWhiteStrip(selectLabelTitle);
 
-    }else if(selectInputDate.checked) {
+    } else if (selectInputDate.checked) {
         setBorderRadiusForFirstSelect(selectLabelDate);
         setBorderRadiusForMiddleSelect(selectLabelPopularity);
         setBorderRadiusForLastSelect(selectLabelTitle);
@@ -56,7 +56,7 @@ selectDiv.addEventListener('focus', function() {
         displayWhiteStrip(selectLabelPopularity);
         hideWhiteStrip(selectLabelTitle);
 
-    }else {
+    } else {
         setBorderRadiusForFirstSelect(selectLabelTitle);
         setBorderRadiusForMiddleSelect(selectLabelPopularity);
         setBorderRadiusForLastSelect(selectLabelDate);
