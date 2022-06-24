@@ -24,6 +24,7 @@ const getPhotographers = async () => {
 
             response.json().then(function (json) {
                 displayData(json.photographers);
+                console.log(json.photographers);
             });
 
         })
@@ -33,7 +34,6 @@ const getPhotographers = async () => {
 }
 
 const displayData = async (photographers) => {
-    console.log('success');
     const photographersSection = document.querySelector(".photographer_section");
 
     photographers.forEach((photographer) => {

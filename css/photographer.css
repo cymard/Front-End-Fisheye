@@ -57,6 +57,7 @@ body {
 
 .photograph-pictures {
     padding: 0 100px;
+    margin-bottom: 50px;
 }
 
 .photograph-pictures form {
@@ -167,7 +168,7 @@ input:checked + label:after {
 
 #pictures {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: repeat(4, 550px);
     grid-template-columns: repeat(3, 1fr);
     padding: 0;
     grid-gap: 50px 100px;
@@ -189,7 +190,16 @@ input:checked + label:after {
     /*background-color: #901C1C;*/
     width: 100%;
     height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+#pictures figure video {
+    /*background-color: #901C1C;*/
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 #pictures figure figcaption {
