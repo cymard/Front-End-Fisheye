@@ -104,8 +104,6 @@ const getDataPhotographer = async () => {
                     }
                 })
 
-                console.log(photographerMediaData);
-
                 return displayPhotographerPageData(photographerPersonalData, photographerMediaData);
 
             });
@@ -118,6 +116,7 @@ const getDataPhotographer = async () => {
 
 function displayPhotographerPageData(photographerPersonalData, photographerMediaData) {
     mediaFactory(photographerPersonalData, photographerMediaData);
+    photographerHeaderFactory(photographerPersonalData);
 }
 
 getDataPhotographer();

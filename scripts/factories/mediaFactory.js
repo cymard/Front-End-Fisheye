@@ -1,6 +1,4 @@
 function mediaFactory (photographerPersonalData, photographerMediaData) {
-    console.log(photographerMediaData.length);
-    console.log(photographerPersonalData)
     let imagesDirPath = photographerPersonalData.name;
     photographerMediaData.map(media => createFigureForMedia(media))
 
@@ -56,6 +54,5 @@ function mediaFactory (photographerPersonalData, photographerMediaData) {
         figcaption.appendChild(figcaptionPara);
         figcaption.appendChild(figcaptionSpan);
         figcaptionSpan.appendChild(figcaptionSpanHeartIcon);
-
     }
 }

@@ -168,7 +168,6 @@ input:checked + label:after {
 
 #pictures {
     display: grid;
-    grid-template-rows: repeat(4, 550px);
     grid-template-columns: repeat(3, 1fr);
     padding: 0;
     grid-gap: 50px 100px;
