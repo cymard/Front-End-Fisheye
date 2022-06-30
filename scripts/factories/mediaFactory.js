@@ -1,10 +1,16 @@
 function mediaFactory (photographerPersonalData, photographerMediaData) {
     let imagesDirPath = photographerPersonalData.name;
     photographerMediaData.map(media => createFigureForMedia(media));
+
     let priceELement = document.querySelector('#text_info_likes span:nth-of-type(2)');
-    let allLikesElement = document.querySelector('#text_info_likes span:nth-of-type(1) span:nth-of-type(1)');
     displayPricePerDay(priceELement);
+
+    let allLikesElement = document.querySelector('#text_info_likes span:nth-of-type(1) span:nth-of-type(1)');
     displaySumOfAllLikes(allLikesElement);
+
+    let modalTitleElement = document.querySelector('#modal_contact_me span');
+    updateModalWithData(modalTitleElement);
+
     // Adapt rows number
     let rowsNumber = Math.ceil(photographerMediaData.length / 3);
     let divPictures = document.getElementById('pictures');
@@ -22,7 +28,7 @@ function mediaFactory (photographerPersonalData, photographerMediaData) {
         if(media.image === undefined) {
             let linkVideo = document.createElement('video');
             linkVideo.setAttribute('width', '250');
-            linkVideo.setAttribute('controls', 'true');
+            // linkVideo.setAttribute('controls', 'true');
 
             let linkVideoSource = document.createElement('source');
             linkVideoSource.setAttribute('src', 'assets/images/'+imagesDirPath+'/'+media.video);
@@ -64,10 +70,13 @@ function mediaFactory (photographerPersonalData, photographerMediaData) {
     }
 
     function displaySumOfAllLikes (allLikesElement) {
-        console.log(photographerMediaData);
         let likes = 0;
         photographerMediaData.map(media => likes += media.likes);
         allLikesElement.innerText = likes;
 
+    }
+
+    function updateModalWithData (modalTitleElement) {
+        modalTitleElement.innerText = photographerPersonalData.name;
     }
 }

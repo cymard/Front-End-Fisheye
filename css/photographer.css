@@ -242,7 +242,7 @@ input:checked + label:after {
 
 #contact_modal {
     background-color: rgba(197, 189, 193, .5);
-    display: flex;
+    display: none;
     align-items: center;
     position: fixed;
     top: 0;
