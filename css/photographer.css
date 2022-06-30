@@ -39,7 +39,10 @@ body {
 }
 
 .photograph-header img {
-    width: initial;
+    width: 192px;
+    height: 192px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .contact_button {
