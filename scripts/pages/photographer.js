@@ -96,7 +96,6 @@ const getDataPhotographer = async () => {
                 let photographerId = parseInt(params.get("id"))
 
                 let photographerPersonalData = json.photographers.find(photographer => photographer.id === photographerId);
-
                 let photographerMediaData = [];
                 json.media.map(function(element) {
                     if(element.photographerId === photographerId) {

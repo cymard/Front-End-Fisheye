@@ -1,7 +1,10 @@
 function mediaFactory (photographerPersonalData, photographerMediaData) {
     let imagesDirPath = photographerPersonalData.name;
-    photographerMediaData.map(media => createFigureForMedia(media))
-
+    photographerMediaData.map(media => createFigureForMedia(media));
+    let priceELement = document.querySelector('#text_info_likes span:nth-of-type(2)');
+    let allLikesElement = document.querySelector('#text_info_likes span:nth-of-type(1) span:nth-of-type(1)');
+    displayPricePerDay(priceELement);
+    displaySumOfAllLikes(allLikesElement);
     // Adapt rows number
     let rowsNumber = Math.ceil(photographerMediaData.length / 3);
     let divPictures = document.getElementById('pictures');
@@ -54,5 +57,17 @@ function mediaFactory (photographerPersonalData, photographerMediaData) {
         figcaption.appendChild(figcaptionPara);
         figcaption.appendChild(figcaptionSpan);
         figcaptionSpan.appendChild(figcaptionSpanHeartIcon);
+    }
+
+    function displayPricePerDay (priceElement) {
+        priceElement.innerText = photographerPersonalData.price+'€ /jour';
+    }
+
+    function displaySumOfAllLikes (allLikesElement) {
+        console.log(photographerMediaData);
+        let likes = 0;
+        photographerMediaData.map(media => likes += media.likes);
+        allLikesElement.innerText = likes;
+
     }
 }
