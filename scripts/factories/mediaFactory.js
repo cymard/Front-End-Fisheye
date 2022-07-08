@@ -1,5 +1,7 @@
 function mediaFactory (photographerPersonalData, photographerMediaData) {
+    console.log(photographerMediaData);
     let imagesDirPath = photographerPersonalData.name;
+
     photographerMediaData.map(media => createFigureForMedia(media));
 
     let priceELement = document.querySelector('#text_info_likes span:nth-of-type(2)');
@@ -21,7 +23,7 @@ function mediaFactory (photographerPersonalData, photographerMediaData) {
         let figure = document.createElement('figure');
 
         let link = document.createElement('a');
-        link.setAttribute('href', '');
+        link.setAttribute('href', '#');
         link.setAttribute('class', 'link_image');
 
         // display image or video

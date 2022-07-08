@@ -91,19 +91,20 @@ const getDataPhotographer = async () => {
                 return console.log("Oops, nous n'avons pas du JSON!");
             }
 
-            response.json().then(function (json) {
-                let params = new URLSearchParams(document.location.search);
-                let photographerId = parseInt(params.get("id"))
+            response.json().then((data) => {
+                const params = new URLSearchParams(document.location.search);
+                const photographerId = parseInt(params.get("id"))
 
-                let photographerPersonalData = json.photographers.find(photographer => photographer.id === photographerId);
+                let photographerData = data.photographers.find(photographer => photographer.id === photographerId);
                 let photographerMediaData = [];
-                json.media.map(function(element) {
+
+                data.media.map(function(element) {
                     if(element.photographerId === photographerId) {
                         photographerMediaData.push(element);
                     }
                 })
 
-                return displayPhotographerPageData(photographerPersonalData, photographerMediaData);
+                displayPhotographerPageData(photographerData, photographerMediaData);
 
             });
 
@@ -113,9 +114,17 @@ const getDataPhotographer = async () => {
         })
 }
 
-function displayPhotographerPageData(photographerPersonalData, photographerMediaData) {
-    mediaFactory(photographerPersonalData, photographerMediaData);
-    photographerHeaderFactory(photographerPersonalData);
+function displayPhotographerPageData(photographerData, photographerMediaData) {
+    /*
+    const photographerHeaderSection = document.querySelector(".photographer_section");
+
+    const photographerModel = photographerFactory(photographerData); // photographer identity
+    const userHeaderDOM = photographerModel.getUserHeaderDOM(); // create article
+    photographerHeaderSection.appendChild(userHeaderDOM);
+    */
+    mediaFactory(photographerData, photographerMediaData);
+    photographerHeaderFactory(photographerData);
+    sendDataToLightbox(photographerMediaData);
 }
 
 getDataPhotographer();

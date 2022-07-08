@@ -318,6 +318,7 @@ input:checked + label:after {
     height: 68px;
     border: none;
     border-radius: 5px;
+    padding: 10px;
 }
 
 #your_message {
