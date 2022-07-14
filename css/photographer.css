@@ -347,10 +347,12 @@ dialog {
     z-index: 2;
 }
 
-dialog img {
+dialog img, dialog video {
     background-color: #D3573C;
     max-height: 100%;
     object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 5px 0px 1px #C4C4C4;
 }
 
 dialog p {

@@ -128,6 +128,7 @@ function displayPhotographerPageData(photographerData, photographerMediaData) {
     const medias = mediasFactory(photographerMediaData, photographerData.name)
     medias.createMedias(photographerMediaData);
     medias.displaySumOfAllLikes();
+    medias.lightbox(photographerMediaData);
 
 
 
