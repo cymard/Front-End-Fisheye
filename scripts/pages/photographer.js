@@ -92,14 +92,17 @@ const getDataPhotographer = async () => {
             }
 
             response.json().then((data) => {
+                // récupérer l'id du photographe dans l'url
                 const params = new URLSearchParams(document.location.search);
                 const photographerId = parseInt(params.get("id"))
 
+                // récupérer les données du photographe en fonction de l'id du photographe
                 let photographerData = data.photographers.find(photographer => photographer.id === photographerId);
                 let photographerMediaData = [];
 
-                data.media.map(function(element) {
-                    if(element.photographerId === photographerId) {
+                // récuperer les médias en fonction de l'id du photographe
+                data.media.map(function (element) {
+                    if (element.photographerId === photographerId) {
                         photographerMediaData.push(element);
                     }
                 })
@@ -115,16 +118,33 @@ const getDataPhotographer = async () => {
 }
 
 function displayPhotographerPageData(photographerData, photographerMediaData) {
-    /*
-    const photographerHeaderSection = document.querySelector(".photographer_section");
+    // Remplir le header avec les données du photographe
+    const photographerModel = photographerFactory(photographerData);
+    photographerModel.setPhotographerHeader()
+    photographerModel.displayPricePerDay();
+    photographerModel.updateModalWithPhotographerName();
 
-    const photographerModel = photographerFactory(photographerData); // photographer identity
-    const userHeaderDOM = photographerModel.getUserHeaderDOM(); // create article
-    photographerHeaderSection.appendChild(userHeaderDOM);
-    */
-    mediaFactory(photographerData, photographerMediaData);
-    photographerHeaderFactory(photographerData);
-    sendDataToLightbox(photographerMediaData);
+    // Media
+    const medias = mediasFactory(photographerMediaData, photographerData.name)
+    medias.createMedias(photographerMediaData);
+    medias.displaySumOfAllLikes();
+
+
+
+    // factories
+    // const mediaModel = mediaFactory(photographerMediaData);
+    // photographerMediaData.forEach((media, index) => {
+    //     mediaModel.createFigureForMedia(media, index, photographerData.name)
+    // });
+    // mediaModel.displayMediaPer3();
+    // mediaModel.displayPricePerDay(photographerData.price);
+    // mediaModel.displaySumOfAllLikes();
+    // mediaModel.updateModalWithData(photographerData.name);
+    // mediaModel.lightbox(photographerMediaData)
+
+
+    // je ne suis pas sur de ça :
+    // sendDataToLightbox(photographerMediaData);
 }
 
 getDataPhotographer();

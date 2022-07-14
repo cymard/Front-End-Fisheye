@@ -24,7 +24,7 @@ const getPhotographers = async () => {
 
             response.json().then(function (json) {
                 displayData(json.photographers);
-                console.log(json.photographers);
+                console.log(json);
             });
 
         })
