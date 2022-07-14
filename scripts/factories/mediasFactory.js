@@ -1,6 +1,7 @@
 function mediasFactory (photographerMediaData, photographerName){
     // console.log(photographerMediaData);
     // console.log(photographerName);
+
     // donner ça en parametre et le trie est fait
     // const allMediasPopularity = ;
     // const allMediasDate = ;
@@ -28,9 +29,12 @@ function mediasFactory (photographerMediaData, photographerName){
     // }
 
     function lightbox (allMedias) {
-        let lightboxElement = document.getElementsByTagName('dialog')[0];
-        let imagesLink = document.querySelectorAll('.link_image');
-        let lightboxCloseBtn = document.querySelector('i.fa-xmark');
+        const lightboxElement = document.getElementsByTagName('dialog')[0];
+        const imagesLink = document.querySelectorAll('.link_image');
+        const lightboxCloseBtn = document.querySelector('i.fa-xmark');
+        const leftArrow = document.querySelector('dialog .arrow_previous');
+        const rightArrow = document.querySelector('dialog .arrow_next');
+        let mediaPosition;
 
         lightboxCloseBtn.addEventListener('click', function (e) {
             lightboxElement.style.display = "none";
@@ -38,19 +42,40 @@ function mediasFactory (photographerMediaData, photographerName){
 
         imagesLink.forEach(link => {
             link.addEventListener('click', function (e) {
-                lightboxElement.style.display = "flex";
-                // selectionner le media correspondant à l'id
                 let mediaData = allMedias[link.dataset.id];
+                mediaPosition = parseInt(link.dataset.id);
 
-                if (mediaData.video !== undefined) {
-                    // video
-                    replaceLightboxContentToVideo(e.target.firstChild.src, mediaData, lightboxElement)
-                    return;
-                }
-                // image
-                replaceLightboxContentToImg(e.target.src, mediaData, lightboxElement);
+                lightboxElement.style.display = "flex";
+                // sélectionner le media correspondant à l'id
+                displayMediaInLightbox(mediaData, e.target)
             })
         })
+
+        rightArrow.addEventListener('click', () => {
+            mediaPosition+=1;
+            if(mediaPosition === imagesLink.length) {
+                mediaPosition = 0;
+            }
+            displayMediaInLightbox(allMedias[mediaPosition], imagesLink[mediaPosition].firstChild)
+        })
+
+        leftArrow.addEventListener('click', () => {
+            mediaPosition-=1;
+            if(mediaPosition === -1) {
+                mediaPosition = imagesLink.length-1;
+            }
+            displayMediaInLightbox(allMedias[mediaPosition], imagesLink[mediaPosition].firstChild)
+        })
+
+        function displayMediaInLightbox (mediaData, mediaDomElement) {
+            if (mediaData.video !== undefined) {
+                // video
+                replaceLightboxContentToVideo(mediaDomElement.firstChild.src, mediaData, lightboxElement)
+                return;
+            }
+            // image
+            replaceLightboxContentToImg(mediaDomElement.src, mediaData, lightboxElement);
+        }
 
         function replaceLightboxContentToImg(imgSrc, mediaData, parentNode) {
             removeLightboxOldContent(parentNode);
