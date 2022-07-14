@@ -321,13 +321,16 @@ input:checked + label:after {
     padding: 10px;
 }
 
-#your_message {
+#message {
     height: 150px;
     width: 100%;
     max-height: 150px;
     max-width: 100%;
     min-height: 150px;
     min-width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
 }
 
 dialog {
