@@ -129,23 +129,8 @@ function displayPhotographerPageData(photographerData, photographerMediaData) {
     medias.createMedias(photographerMediaData);
     medias.displaySumOfAllLikes();
     medias.lightbox(photographerMediaData);
-
-
-
-    // factories
-    // const mediaModel = mediaFactory(photographerMediaData);
-    // photographerMediaData.forEach((media, index) => {
-    //     mediaModel.createFigureForMedia(media, index, photographerData.name)
-    // });
-    // mediaModel.displayMediaPer3();
-    // mediaModel.displayPricePerDay(photographerData.price);
-    // mediaModel.displaySumOfAllLikes();
-    // mediaModel.updateModalWithData(photographerData.name);
-    // mediaModel.lightbox(photographerMediaData)
-
-
-    // je ne suis pas sur de ça :
-    // sendDataToLightbox(photographerMediaData);
+    medias.activeMediasSorting();
+    medias.displayMediasPer3();
 }
 
 getDataPhotographer();

@@ -1,11 +1,64 @@
 function mediasFactory (photographerMediaData, photographerName){
-    // console.log(photographerMediaData);
-    // console.log(photographerName);
 
-    // donner ça en parametre et le trie est fait
-    // const allMediasPopularity = ;
-    // const allMediasDate = ;
-    // const allMediasTitle = ;
+    function activeMediasSorting () {
+        const divSortBy = document.getElementsByClassName('select')[0];
+        let selectInputPopularity = document.getElementById('opt1');
+        let selectInputDate = document.getElementById('opt2');
+        let selectInputTitle = document.getElementById('opt3');
+
+        divSortBy.addEventListener('click', (e) => {
+            if (e.target.nodeName === 'INPUT') {
+                if (selectInputPopularity.checked) {
+                    // Trier par popularité
+                    photographerMediaData.sort((a, b) => {
+                        return a.likes - b.likes
+                    })
+                }
+
+                if (selectInputDate.checked) {
+                    // Trier par date
+                    photographerMediaData.sort((a, b) => {
+                        const date1 = new Date(a.date);
+                        const date2 = new Date(b.date);
+
+                        if(date1 > date2){
+                            return 1
+                        }
+
+                        if(date1 < date2){
+                            return -1
+                        }
+
+                        return 0
+                    })
+                }
+
+                if (selectInputTitle.checked) {
+                    // Trier par titre
+                    photographerMediaData.sort((a, b) => {
+                        return a.title.localeCompare(b.title);
+                    })
+                }
+
+                cleanAllMedias();
+                createMedias(photographerMediaData);
+                lightbox(photographerMediaData)
+            }
+
+            const sortByValue = document.querySelectorAll('.select label');
+            // console.log(sortByValue)
+            sortByValue.forEach((element) => {
+                // console.log(element.style)
+            })
+        })
+    }
+
+    function cleanAllMedias () {
+        let divPictures = document.getElementById('pictures');
+        while (divPictures.firstChild) {
+            divPictures.removeChild(divPictures.firstChild);
+        }
+    }
 
     function createMedias (allMedias) {
         allMedias.forEach((element, index) => {
@@ -21,26 +74,20 @@ function mediasFactory (photographerMediaData, photographerName){
         allLikesElement.innerText = likes;
     }
 
-    // function displayMediasPer3 () {
-    //     // Adapt rows number
-    //     let rowsNumber = Math.ceil(photographerMediaData.length / 3);
-    //     let divPictures = document.getElementById('pictures');
-    //     divPictures.style.gridTemplateRows = 'repeat('+rowsNumber+', 550px)';
-    // }
-
     function lightbox (allMedias) {
         const lightboxElement = document.getElementsByTagName('dialog')[0];
-        const imagesLink = document.querySelectorAll('.link_image');
+        const mediasLink = document.querySelectorAll('.link_image');
         const lightboxCloseBtn = document.querySelector('i.fa-xmark');
         const leftArrow = document.querySelector('dialog .arrow_previous');
         const rightArrow = document.querySelector('dialog .arrow_next');
         let mediaPosition;
 
-        lightboxCloseBtn.addEventListener('click', function (e) {
+        lightboxCloseBtn.addEventListener('click', function () {
             lightboxElement.style.display = "none";
         })
 
-        imagesLink.forEach(link => {
+        mediasLink.forEach(link => {
+            console.log(link);
             link.addEventListener('click', function (e) {
                 let mediaData = allMedias[link.dataset.id];
                 mediaPosition = parseInt(link.dataset.id);
@@ -53,21 +100,23 @@ function mediasFactory (photographerMediaData, photographerName){
 
         rightArrow.addEventListener('click', () => {
             mediaPosition+=1;
-            if(mediaPosition === imagesLink.length) {
+            if(mediaPosition === mediasLink.length) {
                 mediaPosition = 0;
             }
-            displayMediaInLightbox(allMedias[mediaPosition], imagesLink[mediaPosition].firstChild)
+            displayMediaInLightbox(allMedias[mediaPosition], mediasLink[mediaPosition].firstChild)
         })
 
         leftArrow.addEventListener('click', () => {
             mediaPosition-=1;
             if(mediaPosition === -1) {
-                mediaPosition = imagesLink.length-1;
+                mediaPosition = mediasLink.length-1;
             }
-            displayMediaInLightbox(allMedias[mediaPosition], imagesLink[mediaPosition].firstChild)
+            console.log('click');
+            displayMediaInLightbox(allMedias[mediaPosition], mediasLink[mediaPosition].firstChild)
         })
 
         function displayMediaInLightbox (mediaData, mediaDomElement) {
+            // console.log(mediaDomElement)
             if (mediaData.video !== undefined) {
                 // video
                 replaceLightboxContentToVideo(mediaDomElement.firstChild.src, mediaData, lightboxElement)
@@ -123,5 +172,12 @@ function mediasFactory (photographerMediaData, photographerName){
         }
     }
 
-    return {createMedias, displaySumOfAllLikes, lightbox}
+    function displayMediasPer3 () {
+        // Adapt rows number
+        let rowsNumber = Math.ceil(photographerMediaData.length / 3);
+        let divPictures = document.getElementById('pictures');
+        divPictures.style.gridTemplateRows = 'repeat('+rowsNumber+', 550px)';
+    }
+
+    return {createMedias, displaySumOfAllLikes, lightbox, activeMediasSorting, displayMediasPer3}
 }

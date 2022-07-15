@@ -51,13 +51,4 @@ function mediaFactory (mediaData) {
     }
 
     return {createVisualMedia}
-    //
-    // return {
-    //     createFigureForMedia,
-    //     displayMediaPer3,
-    //     displayPricePerDay,
-    //     displaySumOfAllLikes,
-    //     updateModalWithData,
-    //     lightbox
-    // }
 }
