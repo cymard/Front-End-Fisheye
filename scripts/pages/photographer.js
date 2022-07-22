@@ -67,6 +67,52 @@ selectDiv.addEventListener('focus', function () {
     }
 })
 
+// sortBy accessibility
+selectDiv.addEventListener('keydown', (e) => {
+    if (selectInputPopularity.checked) {
+        if(e.key === '&') {
+            selectLabelPopularity.click()
+            selectDiv.focus();
+        }
+        if(e.key === 'é') {
+            selectLabelDate.click()
+            selectDiv.focus();
+        }
+        if(e.key === '"') {
+            selectLabelTitle.click()
+            selectDiv.focus();
+        }
+
+    } else if (selectInputDate.checked) {
+        if(e.key === 'é') {
+            selectLabelPopularity.click()
+            selectDiv.focus();
+        }
+        if(e.key === '&') {
+            selectLabelDate.click()
+            selectDiv.focus();
+        }
+        if(e.key === '"') {
+            selectLabelTitle.click()
+            selectDiv.focus();
+        }
+
+    } else {
+        if(e.key === 'é') {
+            selectLabelPopularity.click()
+            selectDiv.focus();
+        }
+        if(e.key === '"') {
+            selectLabelDate.click()
+            selectDiv.focus();
+        }
+        if(e.key === '&') {
+            selectLabelTitle.click()
+            selectDiv.focus();
+        }
+    }
+})
+
 
 const getDataPhotographer = async () => {
     let myHeaders = new Headers();

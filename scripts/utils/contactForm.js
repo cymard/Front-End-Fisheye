@@ -3,6 +3,7 @@ let firstname = document.getElementById('firstname');
 let lastname = document.getElementById('lastname');
 let email = document.getElementById('email');
 let message = document.getElementById('message');
+let openModalBtn = document.getElementsByClassName('contact_button')[0];
 
 function displayModal() {
     modal.style.display = "flex";
@@ -29,14 +30,17 @@ submitBtn.addEventListener('click', (e) => {
     modalForm.reset();
 })
 
-document.addEventListener('keydown', function(event)
+// modal accessibility
+document.addEventListener('keydown', function(e)
 {
-    if(modal.style.display === "flex") {
-        firstname.focus();
+    // focus modal input
+    if (openModalBtn === document.activeElement) {
+        firstname.focus()
     }
 
-    if(modal.style.display === "flex" && firstname.focus()) {
-        lastname.focus();
+    // escape
+    if (modal.style.display === "flex" && e.key === 'Escape') {
+        closeModal();
+        openModalBtn.focus();
     }
-
 })

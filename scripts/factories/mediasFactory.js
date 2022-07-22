@@ -178,7 +178,7 @@ function mediasFactory(photographerMediaData, photographerName) {
             return lightboxParagraph;
         }
 
-        // accessibility
+        // lightbox accessibility
         document.addEventListener('keydown', function(e)
         {
             if(lightboxElement.style.display === "flex") {
