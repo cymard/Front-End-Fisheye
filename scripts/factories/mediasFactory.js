@@ -177,6 +177,24 @@ function mediasFactory(photographerMediaData, photographerName) {
             lightboxParagraph.innerHTML = mediaParagraph;
             return lightboxParagraph;
         }
+
+        // accessibility
+        document.addEventListener('keydown', function(e)
+        {
+            if(lightboxElement.style.display === "flex") {
+                switch (e.key) {
+                    case 'ArrowRight':
+                        rightArrow.click();
+                        break;
+                    case 'ArrowLeft':
+                        leftArrow.click();
+                        break;
+                    case 'Escape':
+                        lightboxCloseBtn.click();
+                        break;
+                }
+            }
+        })
     }
 
     function displayMediasPer3() {
