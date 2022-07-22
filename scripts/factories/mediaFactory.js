@@ -1,4 +1,4 @@
-function mediaFactory (mediaData) {
+function mediaFactory(mediaData) {
 
     function createVisualMedia(dataId, photographerName) {
         let figure = document.createElement('figure');
@@ -9,19 +9,19 @@ function mediaFactory (mediaData) {
         link.setAttribute('class', 'link_image');
 
         // display image or video
-        if(mediaData.image === undefined) {
+        if (mediaData.image === undefined) {
             let linkVideo = document.createElement('video');
             linkVideo.setAttribute('width', '250');
 
             let linkVideoSource = document.createElement('source');
-            linkVideoSource.setAttribute('src', 'assets/images/'+photographerName+'/'+mediaData.video);
+            linkVideoSource.setAttribute('src', 'assets/images/' + photographerName + '/' + mediaData.video);
             linkVideoSource.setAttribute('type', 'video/mp4');
 
             link.appendChild(linkVideo);
             linkVideo.appendChild(linkVideoSource)
         } else {
             let linkImg = document.createElement('img');
-            linkImg.setAttribute('src', 'assets/images/'+photographerName+'/'+mediaData.image);
+            linkImg.setAttribute('src', 'assets/images/' + photographerName + '/' + mediaData.image);
             // console.log('assets/images/'+photographerName+'/'+media.image);
             link.appendChild(linkImg);
         }
@@ -32,7 +32,7 @@ function mediaFactory (mediaData) {
         figcaptionPara.textContent += mediaData.title;
 
         let figcaptionSpan = document.createElement('span');
-        figcaptionSpan.textContent += mediaData.likes+' ';
+        figcaptionSpan.textContent += mediaData.likes + ' ';
 
         let figcaptionSpanHeartIcon = document.createElement('i');
         figcaptionSpanHeartIcon.setAttribute('class', 'fa-solid fa-heart');

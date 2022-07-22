@@ -1,6 +1,6 @@
 function displayModal() {
     const modal = document.getElementById("contact_modal");
-	modal.style.display = "flex";
+    modal.style.display = "flex";
 }
 
 function closeModal() {
@@ -19,10 +19,10 @@ submitBtn.addEventListener('click', (e) => {
     let message = document.getElementById('message');
 
     console.log({
-        'firstname' : firstname.value,
-        'lastname' : lastname.value,
-        'email' : email.value,
-        'message' : message.value
+        'firstname': firstname.value,
+        'lastname': lastname.value,
+        'email': email.value,
+        'message': message.value
     });
 
     closeModal();

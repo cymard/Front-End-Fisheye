@@ -126,9 +126,9 @@ function displayPhotographerPageData(photographerData, photographerMediaData) {
 
     // Media
     const medias = mediasFactory(photographerMediaData, photographerData.name)
-    medias.createMedias(photographerMediaData);
+    medias.createMedias();
     medias.displaySumOfAllLikes();
-    medias.lightbox(photographerMediaData);
+    medias.lightbox(true);
     medias.activeMediasSorting();
     medias.displayMediasPer3();
 }

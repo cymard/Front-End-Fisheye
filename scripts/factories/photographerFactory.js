@@ -46,12 +46,12 @@ function photographerFactory(data) {
         img.src = 'assets/photographers/' + data.portrait;
     }
 
-    function displayPricePerDay () {
+    function displayPricePerDay() {
         let priceElement = document.querySelector('#text_info_likes span:nth-of-type(2)');
-        priceElement.innerText = price+'€ /jour';
+        priceElement.innerText = price + '€ /jour';
     }
 
-    function updateModalWithPhotographerName () {
+    function updateModalWithPhotographerName() {
         let modalTitleElement = document.querySelector('#modal_contact_me span');
         modalTitleElement.innerText = name;
     }

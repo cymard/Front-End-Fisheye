@@ -20,7 +20,7 @@ body {
     padding: 0 40px;
 }
 
-.photograph-header div h1{
+.photograph-header div h1 {
     color: #D3573C;
     font-size: 60px;
     /*margin: 0;*/
@@ -119,8 +119,7 @@ body {
 
 .select:focus .option:nth-of-type(1):before,
 .select:focus .option:nth-of-type(2):before,
-.select:focus .option:nth-of-type(3):before
-{
+.select:focus .option:nth-of-type(3):before {
     content: '';
     display: var(--test);
     height: 1px;
@@ -271,7 +270,7 @@ input:checked + label:after {
 .modal header h1 {
     color: black;
     font-size: 60px;
-    margin: -15px 0 0 0 ;
+    margin: -15px 0 0 0;
 }
 
 .modal header h1 span {
