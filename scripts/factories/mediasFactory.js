@@ -3,35 +3,34 @@ function mediasFactory(photographerMediaData, photographerName) {
     let mediaPosition;
     let mediasLink;
 
-    function personalizeSelectTabindex (popularityIndex, dateIndex, titleIndex) {
-        let selectLabelPopularity = document.querySelector('[for="opt1"]');
-        let selectLabelDate = document.querySelector('[for="opt2"]');
-        let selectLabelTitle = document.querySelector('[for="opt3"]');
-        selectLabelPopularity.tabIndex = popularityIndex;
-        selectLabelDate.tabIndex = dateIndex;
-        selectLabelTitle.tabIndex = titleIndex;
-    }
-
-    function cleanAndResetSelectArrow () {
-        let allLabels = document.querySelectorAll('.select label');
-        allLabels.forEach(element => {
-            if (element.classList.contains('setArrowDirectionDown')) {
-                element.classList.remove('setArrowDirectionDown');
-            }
-
-            if (element.classList.contains('setArrowDirectionUp')) {
-                element.classList.remove('setArrowDirectionUp');
-            }
-        })
-        document.querySelector('.select input:checked + label').classList.add('setArrowDirectionDown');
-        document.getElementsByClassName('select')[0].focus();
-    }
-
     function activeMediasSorting() {
         const divSortBy = document.getElementsByClassName('select')[0];
         let selectInputPopularity = document.getElementById('opt1');
         let selectInputDate = document.getElementById('opt2');
         let selectInputTitle = document.getElementById('opt3');
+
+        function cleanAndResetSelectArrow () {
+            let allLabels = document.querySelectorAll('.select label');
+            allLabels.forEach(element => {
+                if (element.classList.contains('setArrowDirectionDown')) {
+                    element.classList.remove('setArrowDirectionDown');
+                }
+
+                if (element.classList.contains('setArrowDirectionUp')) {
+                    element.classList.remove('setArrowDirectionUp');
+                }
+            })
+            document.querySelector('.select input:checked + label').classList.add('setArrowDirectionDown');
+            document.getElementsByClassName('select')[0].focus();
+        }
+        function personalizeSelectTabindex (popularityIndex, dateIndex, titleIndex) {
+            let selectLabelPopularity = document.querySelector('[for="opt1"]');
+            let selectLabelDate = document.querySelector('[for="opt2"]');
+            let selectLabelTitle = document.querySelector('[for="opt3"]');
+            selectLabelPopularity.tabIndex = popularityIndex;
+            selectLabelDate.tabIndex = dateIndex;
+            selectLabelTitle.tabIndex = titleIndex;
+        }
 
         divSortBy.addEventListener('click', (e) => {
             cleanAndResetSelectArrow();
@@ -104,12 +103,14 @@ function mediasFactory(photographerMediaData, photographerName) {
     function lightbox(isLightboxFirstInstantiation) {
         const lightboxElement = document.getElementsByTagName('dialog')[0];
         mediasLink = document.querySelectorAll('.link_image');
-        const lightboxCloseBtn = document.querySelector('i.fa-xmark');
+        const closeDialogBtn = document.getElementById('close_dialog');
         const leftArrow = document.querySelector('dialog .arrow_previous');
         const rightArrow = document.querySelector('dialog .arrow_next');
 
-        lightboxCloseBtn.addEventListener('click', function () {
+
+        closeDialogBtn.addEventListener('click', function () {
             lightboxElement.style.display = "none";
+            mediasLink.forEach(media => media.tabIndex = 4);
         })
 
         mediasLink.forEach(link => {
@@ -144,6 +145,12 @@ function mediasFactory(photographerMediaData, photographerName) {
         }
 
         function displayMediaInLightbox() {
+            closeDialogBtn.tabIndex = 4;
+            leftArrow.tabIndex = 4;
+            rightArrow.tabIndex = 4;
+
+            mediasLink.forEach(media => media.tabIndex = -1);
+
             let mediaData = allMedias[mediaPosition];
             let mediaDomElement = mediasLink[mediaPosition].firstChild;
 
@@ -213,7 +220,7 @@ function mediasFactory(photographerMediaData, photographerName) {
                         leftArrow.click();
                         break;
                     case 'Escape':
-                        lightboxCloseBtn.click();
+                        closeDialogBtn.click();
                         break;
                 }
             }
