@@ -41,7 +41,7 @@ function mediasFactory(photographerMediaData, photographerName) {
                     allMedias.sort((a, b) => {
                         return a.likes - b.likes
                     })
-                    personalizeSelectTabindex(1,2,3);
+                    personalizeSelectTabindex(2,3,4);
 
                 }
 
@@ -61,7 +61,7 @@ function mediasFactory(photographerMediaData, photographerName) {
 
                         return 0
                     })
-                    personalizeSelectTabindex(2,1,3);
+                    personalizeSelectTabindex(3,2,4);
                 }
 
                 if (selectInputTitle.checked) {
@@ -69,7 +69,7 @@ function mediasFactory(photographerMediaData, photographerName) {
                     allMedias.sort((a, b) => {
                         return a.title.localeCompare(b.title);
                     })
-                    personalizeSelectTabindex(2,3,1);
+                    personalizeSelectTabindex(3,4,2);
                 }
 
                 cleanAllMedias();
@@ -110,7 +110,7 @@ function mediasFactory(photographerMediaData, photographerName) {
 
         closeDialogBtn.addEventListener('click', function () {
             lightboxElement.style.display = "none";
-            mediasLink.forEach(media => media.tabIndex = 4);
+            mediasLink.forEach(media => media.tabIndex = 5);
         })
 
         mediasLink.forEach(link => {
@@ -145,9 +145,9 @@ function mediasFactory(photographerMediaData, photographerName) {
         }
 
         function displayMediaInLightbox() {
-            closeDialogBtn.tabIndex = 4;
-            leftArrow.tabIndex = 4;
-            rightArrow.tabIndex = 4;
+            closeDialogBtn.tabIndex = 5;
+            leftArrow.tabIndex = 5;
+            rightArrow.tabIndex = 5;
 
             mediasLink.forEach(media => media.tabIndex = -1);
 

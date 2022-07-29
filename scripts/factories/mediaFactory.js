@@ -7,7 +7,7 @@ function mediaFactory(mediaData) {
         link.dataset.id = dataId;
         link.setAttribute('href', '#');
         link.setAttribute('class', 'link_image');
-        link.setAttribute('tabindex', '4');
+        link.setAttribute('tabindex', '5');
 
         // display image or video
         if (mediaData.image === undefined) {
