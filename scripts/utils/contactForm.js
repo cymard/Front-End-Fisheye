@@ -35,7 +35,7 @@ document.addEventListener('keydown', function(e)
 {
     // focus modal input
     if (openModalBtn === document.activeElement) {
-        firstname.focus()
+        firstname.tabIndex = 7;
     }
 
     // escape

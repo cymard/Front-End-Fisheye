@@ -37,7 +37,7 @@ selectDiv.addEventListener('focusout', function () {
     setBorderRadiusForSelectedElement(selectLabelTitle);
 })
 
-selectDiv.addEventListener('focus', function () {
+function applyBorderOnOptions () {
     if (selectInputPopularity.checked) {
         setBorderRadiusForFirstSelect(selectLabelPopularity);
         setBorderRadiusForMiddleSelect(selectLabelDate);
@@ -65,54 +65,101 @@ selectDiv.addEventListener('focus', function () {
         displayWhiteStrip(selectLabelPopularity);
         hideWhiteStrip(selectLabelDate);
     }
+}
+
+selectDiv.addEventListener('focus', function () {
+    applyBorderOnOptions();
 })
 
-// sortBy accessibility
-selectDiv.addEventListener('keydown', (e) => {
-    if (selectInputPopularity.checked) {
-        if(e.key === '&') {
-            selectLabelPopularity.click()
-            selectDiv.focus();
-        }
-        if(e.key === 'é') {
-            selectLabelDate.click()
-            selectDiv.focus();
-        }
-        if(e.key === '"') {
-            selectLabelTitle.click()
-            selectDiv.focus();
-        }
+function openSortBySelect () {
+    selectLabelPopularity.classList.add('focusedOption');
+    selectLabelDate.classList.add('focusedOption');
+    selectLabelTitle.classList.add('focusedOption');
+}
 
-    } else if (selectInputDate.checked) {
-        if(e.key === 'é') {
-            selectLabelPopularity.click()
-            selectDiv.focus();
-        }
-        if(e.key === '&') {
-            selectLabelDate.click()
-            selectDiv.focus();
-        }
-        if(e.key === '"') {
-            selectLabelTitle.click()
-            selectDiv.focus();
-        }
+function closeSortBySelect () {
+    selectLabelPopularity.classList.remove('focusedOption');
+    selectLabelDate.classList.remove('focusedOption');
+    selectLabelTitle.classList.remove('focusedOption');
+}
 
-    } else {
-        if(e.key === 'é') {
-            selectLabelPopularity.click()
-            selectDiv.focus();
-        }
-        if(e.key === '"') {
-            selectLabelDate.click()
-            selectDiv.focus();
-        }
-        if(e.key === '&') {
-            selectLabelTitle.click()
-            selectDiv.focus();
-        }
+setArrowDirectionUp();
+function setArrowDirectionUp () {
+    let inputCheckedLabel = document.querySelector('.select input:checked + label')
+    inputCheckedLabel.classList.add('setArrowDirectionUp');
+    inputCheckedLabel.classList.remove('setArrowDirectionDown');
+}
+
+function setArrowDirectionDown () {
+    let inputCheckedLabel = document.querySelector('.select input:checked + label')
+    inputCheckedLabel.classList.add('setArrowDirectionDown');
+    inputCheckedLabel.classList.remove('setArrowDirectionUp');
+}
+
+// focus
+selectDiv.addEventListener('focus', () => {
+    openSortBySelect();
+    applyBorderOnOptions();
+    setArrowDirectionDown();
+})
+
+selectLabelPopularity.addEventListener('focus', () => {
+    openSortBySelect();
+    applyBorderOnOptions();
+    setArrowDirectionDown();
+})
+
+selectLabelDate.addEventListener('focus', () => {
+    openSortBySelect();
+    applyBorderOnOptions();
+    setArrowDirectionDown();
+})
+
+selectLabelTitle.addEventListener('focus', () => {
+    openSortBySelect();
+    applyBorderOnOptions();
+    setArrowDirectionDown();
+})
+
+// focusout
+selectDiv.addEventListener('focusout', () => {
+    closeSortBySelect();
+    setArrowDirectionUp();
+})
+
+selectLabelPopularity.addEventListener('focusout', () => {
+    closeSortBySelect();
+    setArrowDirectionUp();
+})
+
+selectLabelDate.addEventListener('focusout', () => {
+    closeSortBySelect();
+    setArrowDirectionUp();
+})
+
+selectLabelTitle.addEventListener('focusout', () => {
+    closeSortBySelect();
+    setArrowDirectionUp();
+})
+
+// sortBy click
+selectLabelPopularity.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter') {
+        selectLabelPopularity.click()
     }
 })
 
+selectLabelDate.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter') {
+        selectLabelDate.click()
+    }
+})
+
+selectLabelTitle.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter') {
+        selectLabelTitle.click()
+    }
+})
 
 const getDataPhotographer = async () => {
     let myHeaders = new Headers();

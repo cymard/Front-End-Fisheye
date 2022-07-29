@@ -71,7 +71,7 @@ body {
 
 .photograph-pictures form label {
     font-size: 20px;
-    color: black;
+    /*color: black;*/
     font-weight: bold;
     padding: 15px 15px 0 0;
 }
@@ -117,9 +117,7 @@ body {
     --test: '';
 }
 
-.select:focus .option:nth-of-type(1):before,
-.select:focus .option:nth-of-type(2):before,
-.select:focus .option:nth-of-type(3):before {
+.select:focus .option:before{
     content: '';
     display: var(--test);
     height: 1px;
@@ -130,10 +128,48 @@ body {
     left: 10px;
 }
 
-.select:focus > input:checked + label:after {
+.focusedOption {
+    position: relative;
+    pointer-events: all;
+    background-color: #901C1C;
+    color: #FFF;
+}
+
+.focusedOption:before {
+    content: '';
+    display: var(--test);
+    height: 1px;
+    width: 180px;
+    background-color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+}
+
+
+/*.select:focus > input:checked + label:after {*/
+/*    font-family: "Font Awesome 5 Free";*/
+/*    font-weight: 900;*/
+/*    content: '\f078';*/
+/*    !*TODO *!*/
+/*}*/
+
+.setArrowDirectionDown:after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
+    content: '\f077';
+    position: absolute;
+    right: 10px;
+    z-index: 3;
+}
+
+.setArrowDirectionUp:after {
     content: '\f078';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 10px;
+    z-index: 3;
 }
 
 .selectopt {
@@ -155,14 +191,14 @@ input:checked + label {
     height: 50px;
 }
 
-input:checked + label:after {
-    content: '\f077';
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    position: absolute;
-    right: 10px;
-    z-index: 3;
-}
+/*input:checked + label:after {*/
+/*    content: '\f077';*/
+/*    font-family: "Font Awesome 5 Free";*/
+/*    font-weight: 900;*/
+/*    position: absolute;*/
+/*    right: 10px;*/
+/*    z-index: 3;*/
+/*}*/
 
 .photograph-pictures form label {
     padding: 5px 5px 5px 25px;
