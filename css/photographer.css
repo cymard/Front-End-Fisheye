@@ -146,14 +146,6 @@ body {
     left: 10px;
 }
 
-
-/*.select:focus > input:checked + label:after {*/
-/*    font-family: "Font Awesome 5 Free";*/
-/*    font-weight: 900;*/
-/*    content: '\f078';*/
-/*    !*TODO *!*/
-/*}*/
-
 .setArrowDirectionDown:after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -422,4 +414,8 @@ dialog button {
     right: 80px;
     font-size: 50px;
     color: #901C1C;
+}
+
+.hearthIcone {
+    cursor: pointer;
 }

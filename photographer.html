@@ -34,7 +34,7 @@
     <section class="photograph-pictures">
         <form id="order_by_form" action="">
             <p>Trier par</p>
-            <div class="select" tabindex="2">
+            <div class="select" tabindex="2" role="button" aria-haspopup="true">
                 <input class="selectopt" name="order_by" type="radio" id="opt1" checked>
                 <label for="opt1" class="option" tabindex="2">Popularité</label>
                 <input class="selectopt" name="order_by" type="radio" id="opt2">
@@ -44,19 +44,19 @@
             </div>
         </form>
 
-        <div id="pictures">
+        <div id="pictures" aria-label="pictures">
         </div>
     </section>
 </main>
-<p id="text_info_likes">
+<p id="text_info_likes" aria-label="informations about likes and the price per day">
     <span>
-        <span>295 025</span>
+        <span id="totalLikes">295 025</span>
         <i class="fa-solid fa-heart" aria-label="likes"></i>
     </span>
     <span>300€ / jour</span>
 </p>
 
-<dialog>
+<dialog aria-label="image closeup view">
     <img src="./assets/photographers/account.png" alt="" aria-label="image closeup view">
     <p>Paragraphe paragraphe paragraphe</p>
     <a class="arrow_previous" href="#" aria-label="Previous image">
@@ -70,8 +70,7 @@
     </button>
 </dialog>
 
-<!--        data pour le aria-->
-<div id="contact_modal" aria-labelledby="modal_contact_me">
+<div id="contact_modal" role="Dialog" aria-labelledby="modal_contact_me">
     <div class="modal">
         <header>
             <h1 id="modal_contact_me">
@@ -92,10 +91,10 @@
                 <label for="email">Email</label>
                 <input id="email" type="email"/>
 
-                <label for="message">Votre message</label>
-                <textarea name="message" id="message"></textarea>
+                <label for="message" aria-label="Your message">Votre message</label>
+                <textarea id="message" name="message"></textarea>
             </div>
-            <button class="contact_button" aria-label="send">Envoyer</button>
+            <button class="contact_button" aria-label="Send">Envoyer</button>
         </form>
     </div>
 </div>

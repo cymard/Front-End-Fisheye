@@ -235,5 +235,9 @@ function mediasFactory(photographerMediaData, photographerName) {
         divPictures.style.gridTemplateRows = 'repeat(' + rowsNumber + ', 550px)';
     }
 
+    function addLike() {
+
+    }
+
     return {createMedias, displaySumOfAllLikes, lightbox, activeMediasSorting, displayMediasPer3}
 }

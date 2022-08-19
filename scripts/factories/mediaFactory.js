@@ -19,12 +19,17 @@ function mediaFactory(mediaData) {
             linkVideoSource.setAttribute('src', 'assets/images/' + photographerName + '/' + mediaData.video);
             linkVideoSource.setAttribute('type', 'video/mp4');
 
+            link.ariaLabel = mediaData.title+', closeup view';
+
             link.appendChild(linkVideo);
             linkVideo.appendChild(linkVideoSource)
         } else {
             let linkImg = document.createElement('img');
             linkImg.setAttribute('src', 'assets/images/' + photographerName + '/' + mediaData.image);
             linkImg.setAttribute('alt', mediaData.title)
+
+            link.ariaLabel = mediaData.title+', closeup view';
+
             link.appendChild(linkImg);
         }
 
@@ -39,6 +44,17 @@ function mediaFactory(mediaData) {
         let figcaptionSpanHeartIcon = document.createElement('i');
         figcaptionSpanHeartIcon.setAttribute('class', 'fa-solid fa-heart');
         figcaptionSpanHeartIcon.setAttribute('aria-label', 'likes');
+        figcaptionSpanHeartIcon.classList.add('hearthIcone');
+        figcaptionSpanHeartIcon.addEventListener('click', (e) => {
+            if (figcaptionSpanHeartIcon.classList.contains('hearthIcone')) {
+                let newLikeNumber = parseInt(e.target.parentNode.firstChild.wholeText)+1
+                e.target.parentNode.removeChild(e.target.parentNode.firstChild);
+                e.target.parentNode.firstChild.classList.remove('hearthIcone');
+                e.target.parentNode.insertBefore(new Text(newLikeNumber.toString()+' '), e.target.parentNode.firstChild);
+                let totalLikes = document.getElementById('totalLikes');
+                totalLikes.innerHTML = parseInt(totalLikes.innerHTML)+1
+            }
+        })
 
         // Relier les blocs
         figure.appendChild(link);
