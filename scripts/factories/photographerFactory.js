@@ -7,6 +7,7 @@ function photographerFactory(data) {
         const article = document.createElement('article');
         const link = document.createElement('a');
         link.setAttribute("href", '/Front-End-Fisheye/photographer.html?id=' + data.id);
+        link.tabIndex = 1;
         const img = document.createElement('img');
         img.setAttribute("src", picture)
         img.setAttribute("alt", 'name')
