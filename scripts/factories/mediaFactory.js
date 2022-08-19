@@ -13,6 +13,7 @@ function mediaFactory(mediaData) {
         if (mediaData.image === undefined) {
             let linkVideo = document.createElement('video');
             linkVideo.setAttribute('width', '250');
+            linkVideo.setAttribute('title', mediaData.title)
 
             let linkVideoSource = document.createElement('source');
             linkVideoSource.setAttribute('src', 'assets/images/' + photographerName + '/' + mediaData.video);
@@ -23,7 +24,7 @@ function mediaFactory(mediaData) {
         } else {
             let linkImg = document.createElement('img');
             linkImg.setAttribute('src', 'assets/images/' + photographerName + '/' + mediaData.image);
-            // console.log('assets/images/'+photographerName+'/'+media.image);
+            linkImg.setAttribute('alt', mediaData.title)
             link.appendChild(linkImg);
         }
 

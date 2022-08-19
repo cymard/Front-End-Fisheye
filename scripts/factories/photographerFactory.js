@@ -10,7 +10,7 @@ function photographerFactory(data) {
         link.tabIndex = 1;
         const img = document.createElement('img');
         img.setAttribute("src", picture)
-        img.setAttribute("alt", 'name')
+        img.setAttribute("alt", 'Portrait photo of '+name)
         const h2 = document.createElement('h2');
         h2.textContent = name
 
@@ -45,6 +45,7 @@ function photographerFactory(data) {
 
         let img = document.querySelector('.photograph-header img');
         img.src = 'assets/photographers/' + data.portrait;
+        img.alt =  'Portrait photo of '+ data.name
     }
 
     function displayPricePerDay() {

@@ -169,6 +169,7 @@ function mediasFactory(photographerMediaData, photographerName) {
             // Creer et insérer l'image dans le dom
             let newImage = document.createElement('img');
             newImage.setAttribute('src', imgSrc);
+            newImage.setAttribute('alt', mediaData.title);
             parentNode.insertBefore(newImage, lightboxParagraph);
         }
 
@@ -179,7 +180,7 @@ function mediasFactory(photographerMediaData, photographerName) {
             // créer la video
             let video = document.createElement('video');
             video.setAttribute('controls', 'true');
-
+            video.setAttribute('title', mediaData.title);
             // créer la source
             let source = document.createElement('source');
             source.setAttribute('src', videoSrc);
