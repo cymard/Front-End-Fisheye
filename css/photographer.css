@@ -76,8 +76,20 @@ body {
     padding: 15px 15px 0 0;
 }
 
-#order_by_form p:first-child {
+#order_by_form fieldset p {
     padding-right: 25px;
+}
+
+#order_by_form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+#order_by_form legend {
+    display: none;
 }
 
 .select {
