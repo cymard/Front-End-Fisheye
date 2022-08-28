@@ -125,13 +125,8 @@ body {
     color: #FFF;
 }
 
-:root {
-    --test: '';
-}
-
 .select:focus .option:before{
     content: '';
-    display: var(--test);
     height: 1px;
     width: 180px;
     background-color: #FFFFFF;
