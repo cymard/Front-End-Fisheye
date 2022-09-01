@@ -39,7 +39,6 @@ h1 {
 
 .photographer_section article a {
     text-decoration: none;
-    /*text-align: center;*/
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -23,7 +23,6 @@ body {
 .photograph-header div h1 {
     color: #D3573C;
     font-size: 60px;
-    /*margin: 0;*/
     padding: 0;
 }
 
@@ -49,7 +48,6 @@ body {
     font-size: 20px;
     color: white;
     padding: 11px;
-    /*width: 170px;*/
     height: 70px;
     border: none;
     background-color: #901C1C;
@@ -71,7 +69,6 @@ body {
 
 .photograph-pictures form label {
     font-size: 20px;
-    /*color: black;*/
     font-weight: bold;
     padding: 15px 15px 0 0;
 }
@@ -184,20 +181,10 @@ input:checked + label {
     border-top: none;
     position: relative;
     letter-spacing: 1px;
-    /*border-radius: 5px;*/
     color: white;
     cursor: pointer;
     height: 50px;
 }
-
-/*input:checked + label:after {*/
-/*    content: '\f077';*/
-/*    font-family: "Font Awesome 5 Free";*/
-/*    font-weight: 900;*/
-/*    position: absolute;*/
-/*    right: 10px;*/
-/*    z-index: 3;*/
-/*}*/
 
 .photograph-pictures form label {
     padding: 5px 5px 5px 25px;
@@ -212,7 +199,6 @@ input:checked + label {
 }
 
 #pictures figure {
-    /*background-color: gray;*/
     padding: 0;
     margin: 0;
 }
@@ -223,7 +209,6 @@ input:checked + label {
 }
 
 #pictures figure img {
-    /*background-color: #901C1C;*/
     width: 100%;
     height: 100%;
     border-radius: 5px;
@@ -231,7 +216,6 @@ input:checked + label {
 }
 
 #pictures figure video {
-    /*background-color: #901C1C;*/
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -240,7 +224,6 @@ input:checked + label {
 
 #pictures figure figcaption {
     height: 50px;
-    /*background-color: #312E2E;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -373,7 +356,6 @@ dialog {
     position: fixed;
     top: 0;
     height: 100vh;
-    /*display: flex;*/
     flex-direction: column;
     justify-content: center;
     display: none;
